@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="main-heading">
+            Currency Converter
+        </h1>
+    </div>
+    <div class="container">
+        <div class="input-container">
+            <input type="text" class="input-box"  placeholder="Currency in rupees" id="input-value">
+        </div>
+        
+        <div class="result-container" id="res-container" style="display: none;">
+            <div class="result-1">
+                <h4 class="heading" >
+                    Dollars
+                </h4>
+                <p class="subtitle" id="res-1">
+                    0.013
+                </p>
+            </div>
+            <div class="result-2">
+                <h4 class="heading">
+                    Pounds
+                </h4>
+                <p class="subtitle" id="res-2">
+                    0.011
+                </p>
+            </div>
+            <div class="result-3">
+                <h4 class="heading">
+                    Euro
+                </h4>
+                <p class="subtitle" id="res-3">
+                    0.012
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("input-value").addEventListener('input',function(e){
+            let rupee = e.target.value;
+            if(rupee === ""){
+                document.getElementById("res-container").style.display="none";
+            }
+            else{
+            document.getElementById("res-container").style.display="block";
+            let dollar=document.getElementById("res-1");
+            dollar.innerHTML= (parseInt(rupee) * 0.013);
+
+            let pound=document.getElementById("res-2");
+            pound.innerHTML= (parseInt(rupee) * 0.011);
+
+            let euro=document.getElementById("res-3");
+            euro.innerHTML= (parseInt(rupee) * 0.012);
+            }
+        })
+    </script>
+</body>
+</html>
